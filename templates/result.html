@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #299DD6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #5cb5e0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px white;
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            color:white;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .image-section div {
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 256px;
+            height: 256px;
+            border-radius: 10px;
+            border: 2px solid #2489BB;
+        }
+
+        p {
+            font-size: 20px;
+            color: white;
+            margin: 20px 0;
+        }
+
+        p strong {
+            color: white;
+        }
+
+        h3 {
+            color: white
+        }
+
+        @media (max-width: 768px) {
+            .image-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-section img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+
+        <div class="image-section">
+            <div>
+                <h3>Original X-ray Image</h3>
+                <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="X-ray Image">
+            </div>
+            <div>
+                <h3>Prediction Mask</h3>
+                <img src="{{ url_for('static', filename='predictions/' + pred_filename) }}" alt="Prediction Mask">
+            </div>
+        </div>
+
+        <p><strong>Prediction:</strong> {{ result }}</p>
+    </div>
+</body>
+</html>

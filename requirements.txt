@@ -1,0 +1,7 @@
+torch                   # For PyTorch (model training, saving, and inference)
+torchvision             # For image transformations (if using image datasets)
+numpy                   # For numerical computations
+matplotlib              # For visualizations (if applicable)
+flask                   # For running a web app or API (if 'app.py' uses Flask)
+pandas                  # For data manipulation (if needed for dataset loading)
+scikit-learn            # For additional machine learning utilities (metrics, etc.)
